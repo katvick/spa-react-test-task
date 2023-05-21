@@ -1,5 +1,5 @@
 import { Card, Col, Image, Row, } from 'react-bootstrap';
-import Comments from '../comments/comments';
+import CommentsList from '../comments-list/comments-list';
 
 function Post(): JSX.Element {
   return (
@@ -29,7 +29,7 @@ function Post(): JSX.Element {
         
         <Row>
           <Col>
-            <Comments />
+            <CommentsList />
           </Col>
         </Row>
       </Card.Body>

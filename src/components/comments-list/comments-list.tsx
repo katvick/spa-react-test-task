@@ -1,8 +1,9 @@
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import BtnComments from '../btn-comments/btn-comments';
+import Comment from '../comment/comment';
 
-function Comments() {
+function CommentsList() {
   return (
     <Accordion defaultActiveKey="0">
       <Card>
@@ -16,7 +17,9 @@ function Comments() {
 
         <Accordion.Collapse eventKey="1">
           <Card.Body>
-            Content
+            <Comment />
+            <Comment />
+            <Comment />
           </Card.Body>
         </Accordion.Collapse>
       </Card>
@@ -24,4 +27,4 @@ function Comments() {
   );
 }
 
-export default Comments;
+export default CommentsList;
