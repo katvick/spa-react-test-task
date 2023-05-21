@@ -1,9 +1,9 @@
-import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
-import NavUser from "../nav-user/nav-user";
+import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
+import NavUser from '../nav-user/nav-user';
 
 function NavBar(): JSX.Element {
   return (
-    <Navbar bg="light" expand={false} className="mb-3 ">
+    <Navbar bg="light" expand={false} className="mb-5">
       <Container fluid>
         {/* <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand> */}
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${false}`} />

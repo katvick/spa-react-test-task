@@ -1,9 +1,8 @@
-import Header from "../../components/header/header";
+import Header from '../../components/header/header';
 
 function UserDetailsPage(): JSX.Element {
   return (
     <Header></Header>
-
   )
 }
 

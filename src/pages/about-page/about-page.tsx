@@ -1,9 +1,8 @@
-import Header from "../../components/header/header";
+import Header from '../../components/header/header';
 
 function AboutPage(): JSX.Element {
   return (
     <Header></Header>
-
   )
 }
 
