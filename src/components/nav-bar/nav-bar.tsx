@@ -1,5 +1,6 @@
 import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import NavUser from '../nav-user/nav-user';
+import { AppRoute } from '../../const';
 
 function NavBar(): JSX.Element {
   return (
@@ -21,8 +22,8 @@ function NavBar(): JSX.Element {
           
           <Offcanvas.Body>
             <Nav className="justify-content-start flex-grow-1 pe-3">
-              <Nav.Link href="#action1">Список постов</Nav.Link>
-              <Nav.Link href="#action2">Обо мне</Nav.Link>
+              <Nav.Link href={AppRoute.Main}>Список постов</Nav.Link>
+              <Nav.Link href={AppRoute.About}>Обо мне</Nav.Link>
               
               <NavUser />
             </Nav>

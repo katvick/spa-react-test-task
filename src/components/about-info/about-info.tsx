@@ -2,15 +2,12 @@ import { Card, Col, Image, Row, } from 'react-bootstrap';
 
 function AboutInfo(): JSX.Element {
   return (
-    // <Card className='mx-auto my-4'>
-    //   <Card.Body className="about-info">
         <Row className="my-4">
-          <Col className="avatar d-flex align-items-start">
-            <div className="user-avatar d-flex  justify-content-center">
+          <Col className="d-flex align-items-start">
+            <div className="avatar avatar--about d-flex justify-content-center">
               <Image
                 src='img/about.jpg'
                 roundedCircle
-                height={300}
               />
             </div>
             
@@ -48,8 +45,6 @@ function AboutInfo(): JSX.Element {
             </div>
           </Col>
         </Row>
-    //   </Card.Body>
-    // </Card>
   )
 }
 

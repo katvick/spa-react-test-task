@@ -1,21 +1,22 @@
 import { Card, Col, Image, Row, } from 'react-bootstrap';
 import CommentsList from '../comments-list/comments-list';
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../const';
 
 function Post(): JSX.Element {
   return (
     <Card className='mx-auto my-4'>
-      <Card.Body className="post">
+      <Card.Body className="post mx-1 my-1">
         <Row className="mb-4">
           <Col className="post d-flex align-items-start">
-            <div className="user-avatar d-flex  justify-content-center">
+            <Link to={AppRoute.User} className="avatar avatar--post d-flex justify-content-center">
               <Image
-                src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJVH0h1OwJsUSQVr-yAC0L9MzciamkLT1jPh1yDJVJMMbGG4z86qgTeKywIPNGZCAuGw0&usqp=CAU'
-                rounded
-                height={70}
+                src='https://m.buro247.ru/images/senina/aiony-haust-3TLl_97HNJo-unspl.jpg'
+                roundedCircle
               />
-            </div>
+            </Link>
             
-            <div className="post__content mx-2">
+            <div className="post__content mx-3">
               <Card.Title>
                 Card Title
               </Card.Title>
