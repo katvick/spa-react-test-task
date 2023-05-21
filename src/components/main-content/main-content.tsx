@@ -6,6 +6,8 @@ function MainContent(): JSX.Element {
     <main className="main">
       <Container>
         <Post />
+        <Post />
+        <Post />
       </Container>
     </main>
   )
