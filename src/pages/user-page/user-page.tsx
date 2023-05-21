@@ -1,9 +1,9 @@
 import Header from '../../components/header/header';
 
-function UserDetailsPage(): JSX.Element {
+function UserPage(): JSX.Element {
   return (
     <Header></Header>
   )
 }
 
-export default UserDetailsPage;
+export default UserPage;
