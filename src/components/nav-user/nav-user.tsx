@@ -5,7 +5,7 @@ function NavUser(): JSX.Element {
     <div className="mt-4 d-flex align-items-center">
       <div className="avatar avatar--nav d-flex justify-content-center">
         <Image
-          src='https://m.buro247.ru/images/senina/aiony-haust-3TLl_97HNJo-unspl.jpg'
+          src='img/about.jpg'
           roundedCircle
         />
       </div>
