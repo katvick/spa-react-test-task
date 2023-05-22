@@ -1,5 +1,4 @@
 import { Container } from 'react-bootstrap';
-import Post from '../post/post';
 import PostsListMain from '../posts-list-main/posts-list-main';
 
 function MainContent(): JSX.Element {
