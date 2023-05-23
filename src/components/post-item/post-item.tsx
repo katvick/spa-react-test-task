@@ -4,14 +4,14 @@ import { Link, generatePath } from 'react-router-dom';
 import { AppRoute } from '../../const';
 import { useAppSelector } from '../../hooks';
 
-type PostProps = {
+type PostItemProps = {
   userId: number;
   id: number;
   title: string;
   body: string;
 }
 
-function PostItem({userId, id, title, body}: PostProps): JSX.Element {
+function PostItem({userId, id, title, body}: PostItemProps): JSX.Element {
   const comments = useAppSelector((state) => state.POSTS.comments);
   const commentsByPost = comments.filter((comment) => id === comment.postId);
 

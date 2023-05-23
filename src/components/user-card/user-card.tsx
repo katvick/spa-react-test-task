@@ -1,13 +1,11 @@
 import { Card, Col, Image, Row } from "react-bootstrap";
-import { useParams } from "react-router-dom";
-import { useAppSelector } from "../../hooks";
+import { User } from "../../types/user-data";
 
-function UserCard(): JSX.Element {
-  const users = useAppSelector((state) => state.USER.users);
+type UserCardProps = {
+  user: User | undefined;
+}
 
-  const params = useParams();
-  const user = users.find((item) => item.id === Number(params.id));
-
+function UserCard({user}: UserCardProps): JSX.Element {
   return (
     <Card className='mx-auto mb-5 mt-3'>
       <Card.Body>
