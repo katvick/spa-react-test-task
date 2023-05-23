@@ -9,7 +9,7 @@ export type UserState = {
 
 export type PostsState = {
   posts: Post[];
-  commentsOnPost: Comment[];
+  comments: Comment[];
 }
 
 export type State = ReturnType<typeof store.getState>;

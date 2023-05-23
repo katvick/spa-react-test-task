@@ -1,9 +1,14 @@
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import BtnComments from '../btn-comments/btn-comments';
-import Comment from '../comment/comment';
+import CommentItem from '../comment-item/comment-item';
+import { Comment } from '../../types/user-data';
 
-function CommentsList() {
+type CommentsListProps = {
+  comments: Comment[]
+}
+
+function CommentsList({comments}: CommentsListProps): JSX.Element {
   return (
     <Accordion defaultActiveKey="0">
       <Card>
@@ -17,9 +22,16 @@ function CommentsList() {
 
         <Accordion.Collapse eventKey="1">
           <Card.Body>
-            <Comment />
-            <Comment />
-            <Comment />
+            {comments.map((comment) => {
+              const keyValue = `${comment.id}-comment`
+              return (
+                <CommentItem
+                  key={keyValue}
+                  email={comment.email}
+                  body={comment.body}
+                />
+              )
+            })}
           </Card.Body>
         </Accordion.Collapse>
       </Card>

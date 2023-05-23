@@ -1,5 +1,5 @@
 import { useAppSelector } from '../../hooks';
-import Post from '../post/post';
+import Post from '../post-item/post-item';
 
 function PostsListUser(): JSX.Element {
   const posts = useAppSelector((state) => state.POSTS.posts);
@@ -12,6 +12,7 @@ function PostsListUser(): JSX.Element {
         return (
           <Post
             key={keyValue}
+            id={post.id}
             title={post.title}
             body={post.body}
           />

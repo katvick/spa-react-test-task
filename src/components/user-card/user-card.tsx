@@ -4,7 +4,7 @@ function UserCard(): JSX.Element {
   return (
     <Card className='mx-auto mb-5 mt-3'>
       <Card.Body>
-        <Row className="my-3 mx-3">
+        <Row className="my-3 mx-1">
           <Col className="d-flex align-items-center">
             <div className="avatar avatar--user-card d-flex justify-content-center">
               <Image

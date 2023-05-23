@@ -6,7 +6,7 @@ import { NameSpace } from '../../const';
 
 const initialState: PostsState = {
   posts: Posts,
-  commentsOnPost: Comments,
+  comments: Comments,
 }
 
 export const postsReducer = createSlice({
