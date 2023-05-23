@@ -11,6 +11,7 @@ function PostsListMain(): JSX.Element {
         return (
           <Post
             key={keyValue}
+            userId={post.userId}
             id={post.id}
             title={post.title}
             body={post.body}

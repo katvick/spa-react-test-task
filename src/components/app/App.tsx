@@ -22,7 +22,7 @@ function App() {
           element={<AboutPage />}
         />
         <Route
-          path={AppRoute.User}
+          path={AppRoute.UserCard}
           element={<UserPage />}
         />
         {/* <Route

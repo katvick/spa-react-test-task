@@ -6,12 +6,13 @@ function PostsListUser(): JSX.Element {
 
   return (
     <div className="posts-list-wrapper">
-      <h2 className="display-6 mb-4">Посты пользователя</h2>
+      <h2 className="display-6 text-center mb-4">Посты пользователя</h2>
       {posts.map((post) => {
         const keyValue = `${post.id}-post`
         return (
           <Post
             key={keyValue}
+            userId={post.userId}
             id={post.id}
             title={post.title}
             body={post.body}

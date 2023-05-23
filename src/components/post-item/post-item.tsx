@@ -1,25 +1,28 @@
 import { Card, Col, Image, Row, } from 'react-bootstrap';
 import CommentsList from '../comments-list/comments-list';
-import { Link } from 'react-router-dom';
+import { Link, generatePath } from 'react-router-dom';
 import { AppRoute } from '../../const';
 import { useAppSelector } from '../../hooks';
 
 type PostProps = {
+  userId: number;
   id: number;
   title: string;
   body: string;
 }
 
-function PostItem({id, title, body}: PostProps): JSX.Element {
+function PostItem({userId, id, title, body}: PostProps): JSX.Element {
   const comments = useAppSelector((state) => state.POSTS.comments);
   const commentsByPost = comments.filter((comment) => id === comment.postId);
 
+  const linkUserCard = generatePath(AppRoute.UserCard, {id: String(userId)})
+
   return (
-    <Card className='my-4' style={{ width: '80%' }}>
+    <Card className='my-4 mx-auto' style={{ width: '80%' }}>
       <Card.Body className="post mx-1 my-1">
         <Row className="mb-4">
           <Col className="post d-flex align-items-start">
-            <Link to={AppRoute.User} className="avatar avatar--post d-flex justify-content-center">
+            <Link to={linkUserCard} className="avatar avatar--post d-flex justify-content-center">
               <Image
                 src='https://m.buro247.ru/images/senina/aiony-haust-3TLl_97HNJo-unspl.jpg'
                 roundedCircle

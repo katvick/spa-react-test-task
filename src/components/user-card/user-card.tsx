@@ -1,11 +1,18 @@
 import { Card, Col, Image, Row } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import { useAppSelector } from "../../hooks";
 
 function UserCard(): JSX.Element {
+  const users = useAppSelector((state) => state.USER.users);
+
+  const params = useParams();
+  const user = users.find((item) => item.id === Number(params.id));
+
   return (
     <Card className='mx-auto mb-5 mt-3'>
       <Card.Body>
         <Row className="my-3 mx-1">
-          <Col className="d-flex align-items-center">
+          <Col className="d-flex align-items-start">
             <div className="avatar avatar--user-card d-flex justify-content-center">
               <Image
                 src='https://m.buro247.ru/images/senina/aiony-haust-3TLl_97HNJo-unspl.jpg'
@@ -14,12 +21,16 @@ function UserCard(): JSX.Element {
             </div>
             
             <div className="about-info__content mx-5">
-              <Card.Title className="mb-3">
-                Sed vulputate
+              <Card.Title className="mb-4">
+                {user?.name}
               </Card.Title>
 
               <Card.Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl felis, suscipit dictum lacinia eget, tincidunt non sapien. Suspendisse turpis felis, imperdiet vitae purus et, suscipit blandit lorem. Vivamus leo risus, dapibus vel diam in, eleifend iaculis eros. Sed vulputate, nisl quis sagittis maximus, urna est facilisis mauris, non porta nunc risus sed augue.
+                <p><b>Username:</b> {user?.username}</p>
+                <p><b>Email:</b> {user?.email}</p>
+                <p><b>Phone:</b> {user?.phone}</p>
+                <p><b>О компании:</b> {user?.company.name}. {user?.company.catchPhrase}. {user?.company.bs}</p>
+                <p><b>Сайт:</b> {user?.website}</p>
               </Card.Text>
             </div>
           </Col>

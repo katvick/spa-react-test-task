@@ -1,7 +1,7 @@
 export enum AppRoute {
   Main = '/',
   About = '/about',
-  User = '/user',
+  UserCard = '/user/:id',
 }
 
 export enum NameSpace {

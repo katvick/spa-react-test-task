@@ -5,7 +5,7 @@ function MainContent(): JSX.Element {
   return (
     <main className="main">
       <Container>
-        <h1 className="display-5 mb-5">Список постов</h1>
+        <h1 className="display-5 text-center mb-5">Список постов</h1>
         <PostsListMain />
       </Container>
     </main>

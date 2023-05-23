@@ -2,9 +2,8 @@ import { store } from '../store';
 import { Comment, Post, User } from './user-data'
 
 export type UserState = {
-  userInfo: User;
+  users: User[];
   userPosts: Post[];
-  commentsOnPost: Comment[];
 }
 
 export type PostsState = {
