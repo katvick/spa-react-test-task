@@ -3,3 +3,8 @@ export enum AppRoute {
   About = '/about',
   User = '/user',
 }
+
+export enum NameSpace {
+  Posts = 'POSTS',
+  User = 'USER',
+}
