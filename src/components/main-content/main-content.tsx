@@ -1,7 +1,7 @@
 import { Container } from 'react-bootstrap';
 import PostsListMain from '../posts-list-main/posts-list-main';
 
-function MainContent(): JSX.Element {
+function MainContent(): JSX.Element {  
   return (
     <main className="main">
       <Container>
