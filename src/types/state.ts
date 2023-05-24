@@ -3,7 +3,6 @@ import { Comment, Post, User } from './user-data'
 
 export type UserState = {
   users: User[];
-  userPosts: Post[];
 }
 
 export type PostsState = {

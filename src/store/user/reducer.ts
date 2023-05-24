@@ -1,19 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { UserState } from '../../types/state';
-import { Users } from '../../mocks/user-info';
-import { Posts } from '../../mocks/posts';
 import { NameSpace } from '../../const';
+import { loadUsers } from './actions';
 
 const initialState: UserState = {
-  users: Users,
-  userPosts: Posts,
+  users: [],
 }
 
 export const userReducer = createSlice({
   name: NameSpace.User,
   initialState,
-  reducers: {},
+  reducers: {
+  },
   extraReducers(builder) {
-    
+    builder
+      .addCase(loadUsers, (state, action) => {
+        state.users = action.payload;
+      })
   }
 })
