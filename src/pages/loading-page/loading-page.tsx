@@ -1,8 +1,12 @@
-import { Spinner } from 'react-bootstrap';
+import { Container, Spinner } from 'react-bootstrap';
 
 function LoadingPage(): JSX.Element {
   return (
-    <Spinner animation="border" />
+    <Container>
+      <div className="spinner-wrapper d-flex justify-content-center">
+        <Spinner animation="border" role="status" />
+      </div>
+    </Container>
   )
 }
 

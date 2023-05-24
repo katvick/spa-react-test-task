@@ -8,6 +8,8 @@ export type UserState = {
 export type PostsState = {
   posts: Post[];
   comments: Comment[];
+  isPostsLoading: boolean;
+  isCommentsLoading: boolean;
 }
 
 export type State = ReturnType<typeof store.getState>;
