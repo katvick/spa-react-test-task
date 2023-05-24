@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { PostsState } from '../../types/state';
 import { NameSpace } from '../../const';
-import { loadPosts } from './actions';
+import { loadComments, loadPosts } from './actions';
 
 const initialState: PostsState = {
   posts: [],
@@ -16,6 +16,9 @@ export const postsReducer = createSlice({
     builder
       .addCase(loadPosts, (state, action) => {
         state.posts = action.payload;
+      })
+      .addCase(loadComments, (state, action) => {
+        state.comments = action.payload;
       })
   }
 })
