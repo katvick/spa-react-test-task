@@ -8,3 +8,9 @@ export enum NameSpace {
   Posts = 'POSTS',
   User = 'USER',
 }
+
+export enum APIRoute {
+  Posts = '/posts',
+  Comments = '/comments',
+  Users = '/users',
+}
