@@ -3,6 +3,7 @@ import { Comment, Post, User } from './user-data'
 
 export type UserState = {
   users: User[];
+  isUsersLoading: boolean;
 }
 
 export type PostsState = {

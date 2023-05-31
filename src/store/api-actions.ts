@@ -3,7 +3,6 @@ import { AppDispatch, State } from '../types/state';
 import { AxiosInstance } from 'axios';
 import { Post, Comment, User } from '../types/user-data';
 import { APIRoute } from '../const';
-import { loadUsers } from './user/actions';
 
 export const fetchPostsAction = createAsyncThunk<Post[], undefined, {
   dispatch: AppDispatch;
@@ -13,9 +12,6 @@ export const fetchPostsAction = createAsyncThunk<Post[], undefined, {
   'data/fetchPosts',
   async (_arg, {dispatch, extra: api}) => {
     const {data} = await api.get<Post[]>(APIRoute.Posts);
-    setTimeout(() => {
-      console.log("Delayed for 1 second.");
-    }, 500);
     return data;
   }
 )
@@ -32,7 +28,7 @@ export const fetchCommentsAction = createAsyncThunk<Comment[], undefined, {
   }
 )
 
-export const fetchUsersAction = createAsyncThunk<void, undefined, {
+export const fetchUsersAction = createAsyncThunk<User[], undefined, {
   dispatch: AppDispatch;
   state: State;
   extra: AxiosInstance;
@@ -40,6 +36,6 @@ export const fetchUsersAction = createAsyncThunk<void, undefined, {
   'data/fetchUsers',
   async (_arg, {dispatch, extra: api}) => {
     const {data} = await api.get<User[]>(APIRoute.Users)
-    dispatch(loadUsers(data));
+    return data;
   }
 )
