@@ -6,7 +6,7 @@ import { fetchCommentsAction, fetchPostsAction } from '../../store/api-actions';
 import LoadingPage from '../loading-page/loading-page';
 
 function MainPage(): JSX.Element {
-  const posts = useAppSelector((state) => state.POSTS.posts);
+  const posts = useAppSelector((state) => state.POSTS.postsDefault);
   const comments = useAppSelector((state) => state.POSTS.comments);
   const isPostsLoading = useAppSelector((state) => state.POSTS.isPostsLoading);
   const isCommentsLoading = useAppSelector((state) => state.POSTS.isCommentsLoading);

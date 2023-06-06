@@ -7,7 +7,7 @@ import PostsList from "../posts-list/posts-list";
 
 function UserContent(): JSX.Element {
   const users = useAppSelector((state) => state.USER.users);
-  const posts = useAppSelector((state) => state.POSTS.posts)
+  const posts = useAppSelector((state) => state.POSTS.postsDefault)
 
   const params = useParams();
   const user = users.find((item) => item.id === Number(params.id));

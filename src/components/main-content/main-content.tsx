@@ -4,7 +4,7 @@ import { useAppSelector } from '../../hooks';
 import Search from '../search/search';
 
 function MainContent(): JSX.Element {  
-  const posts = useAppSelector((state) => state.POSTS.posts);
+  const posts = useAppSelector((state) => state.POSTS.postsSorted);
 
   return (
     <main className="main">

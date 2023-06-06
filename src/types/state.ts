@@ -7,7 +7,8 @@ export type UserState = {
 }
 
 export type PostsState = {
-  posts: Post[];
+  postsDefault: Post[];
+  postsSorted: Post[];
   comments: Comment[];
   isPostsLoading: boolean;
   isCommentsLoading: boolean;

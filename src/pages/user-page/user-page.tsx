@@ -5,7 +5,7 @@ import { fetchCommentsAction, fetchPostsAction, fetchUsersAction } from '../../s
 import LoadingPage from '../loading-page/loading-page';
 
 function UserPage(): JSX.Element {
-  const posts = useAppSelector((state) => state.POSTS.posts);
+  const posts = useAppSelector((state) => state.POSTS.postsDefault);
   const comments = useAppSelector((state) => state.POSTS.comments);
   const users = useAppSelector((state) => state.USER.users);
 
