@@ -7,8 +7,6 @@ type PostsListProps = {
 }
 
 function PostsList({posts}: PostsListProps): JSX.Element {
-  // const posts = useAppSelector((state) => state.POSTS.posts);
-
   return (
     <div className="posts-list-wrapper">
       {posts.map((post) => {
