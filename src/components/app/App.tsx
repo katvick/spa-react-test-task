@@ -8,6 +8,7 @@ import { AppRoute } from '../../const';
 import MainPage from '../../pages/main-page/main-page';
 import AboutPage from '../../pages/about-page/about-page';
 import UserPage from '../../pages/user-page/user-page';
+import NotFoundPage from '../../pages/not-found-page/not-found-page';
 
 function App() {
   return (
@@ -25,10 +26,10 @@ function App() {
           path={AppRoute.UserCard}
           element={<UserPage />}
         />
-        {/* <Route
+        <Route
           path="*"
-          element={< />}
-        /> */}
+          element={<NotFoundPage />}
+        />
       </Routes>
     </BrowserRouter>
   );
