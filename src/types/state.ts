@@ -4,6 +4,8 @@ import { Comment, Post, User } from './user-data'
 export type UserState = {
   users: User[];
   isUsersLoading: boolean;
+  errorUsersLoading: boolean;
+  errorText: string | undefined;
 }
 
 export type PostsState = {
