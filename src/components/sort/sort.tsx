@@ -1,6 +1,6 @@
 import { ToggleButton } from 'react-bootstrap';
 import { useAppDispatch } from '../../hooks';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { cancelSortPosts, sortPosts } from '../../store/posts/reducer';
 
 function Sort(): JSX.Element {
@@ -8,11 +8,13 @@ function Sort(): JSX.Element {
 
   const dispatch = useAppDispatch();
 
-  if (checked === true) {
-    dispatch(sortPosts());
-  } else {
-    dispatch(cancelSortPosts());
-  }
+  useEffect(() => {
+    if (checked === true) {
+      dispatch(sortPosts());
+    } else {
+      dispatch(cancelSortPosts());
+    }
+  }, [dispatch, checked]);
 
   return (
     <ToggleButton
@@ -24,7 +26,6 @@ function Sort(): JSX.Element {
         value="1"
         onChange={(e) => {
           setChecked(e.currentTarget.checked);
-
         }}
       >
         <b>a-z</b>

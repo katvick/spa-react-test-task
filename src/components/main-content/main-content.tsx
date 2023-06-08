@@ -10,7 +10,7 @@ function MainContent(): JSX.Element {
   return (
     <main className="main">
       <Container>
-        <div className="wrapper-list-posts mx-auto" style={{ width: '80%' }}>
+        <div className="wrapper-list-posts mx-auto" >
           <h1 className="display-5 text-center mb-5">Список постов</h1>
           <Search />
           <Sort />

@@ -33,7 +33,7 @@ function PostsList({posts}: PostsListProps): JSX.Element {
 
       <PaginationControl
         page={page}
-        between={4}
+        between={2}
         total={posts.length}
         limit={limitPostsOnPage}
         changePage={(page) => {
