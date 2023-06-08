@@ -15,7 +15,6 @@ function PostsList({posts}: PostsListProps): JSX.Element {
 
   const indexFirstActualPost = limitPostsOnPage * (page - 1);
   const postsOnPage = posts.slice(indexFirstActualPost, indexFirstActualPost + 5);
-	console.log('TCL: postsOnPage', postsOnPage)
 
   return (
     <div className="posts-list-wrapper">

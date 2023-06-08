@@ -12,6 +12,9 @@ export type PostsState = {
   comments: Comment[];
   isPostsLoading: boolean;
   isCommentsLoading: boolean;
+  errorPostLoading: boolean;
+  errorCommentsLoading: boolean;
+  errorText: string | undefined;
 }
 
 export type State = ReturnType<typeof store.getState>;

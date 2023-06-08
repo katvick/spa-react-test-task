@@ -10,6 +10,9 @@ const initialState: PostsState = {
   comments: [],
   isPostsLoading: false,
   isCommentsLoading: false,
+  errorPostLoading: false,
+  errorCommentsLoading: false,
+  errorText: '',
 }
 
 export const postsReducer = createSlice({
@@ -30,18 +33,31 @@ export const postsReducer = createSlice({
     builder
       .addCase(fetchPostsAction.pending, (state) => {
         state.isPostsLoading = true;
+        state.errorPostLoading = false;
       })
       .addCase(fetchPostsAction.fulfilled, (state, action) => {
+        state.isPostsLoading = false;
         state.postsDefault = action.payload;
         state.postsSorted = action.payload;
-        state.isPostsLoading = false;
       })
+      .addCase(fetchPostsAction.rejected, (state, action) => {
+        state.isPostsLoading = false;
+        state.errorPostLoading = true;
+        state.errorText = action.error.message;
+      })
+
       .addCase(fetchCommentsAction.pending, (state) => {
         state.isCommentsLoading = true;
+        state.errorCommentsLoading = false;
       })
       .addCase(fetchCommentsAction.fulfilled, (state, action) => {
-        state.comments = action.payload;
         state.isCommentsLoading = false;
+        state.comments = action.payload;
+      })
+      .addCase(fetchCommentsAction.rejected, (state, action) => {
+        state.isCommentsLoading = false;
+        state.errorCommentsLoading = true;
+        state.errorText = action.error.message;
       })
   }
 })
