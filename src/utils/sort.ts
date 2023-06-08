@@ -19,3 +19,7 @@ export const sortBySearch = (posts: Post[], phrase: string) => {
 
   return sortPosts;
 }
+
+export const sortByTitle = (firstPost: Post, secondPost: Post) => {
+  return firstPost.title.localeCompare(secondPost.title);
+}

@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { PostsState } from '../../types/state';
 import { NameSpace } from '../../const';
 import { fetchCommentsAction, fetchPostsAction } from '../api-actions';
-import { sortBySearch } from '../../utils/sort';
+import { sortByTitle, sortBySearch } from '../../utils/sort';
 
 const initialState: PostsState = {
   postsDefault: [],
@@ -18,6 +18,12 @@ export const postsReducer = createSlice({
   reducers: {
     searchPosts: (state, action: PayloadAction<{searchPhrase: string}>) => {
       state.postsSorted = sortBySearch(state.postsDefault, action.payload.searchPhrase)
+    },
+    sortPosts: (state) => {
+      state.postsSorted = state.postsSorted.sort(sortByTitle);
+    },
+    cancelSortPosts: (state) => {
+      state.postsSorted = state.postsDefault;
     }
   },
   extraReducers(builder) {
@@ -40,4 +46,4 @@ export const postsReducer = createSlice({
   }
 })
 
-export const {searchPosts} = postsReducer.actions;
+export const {searchPosts, sortPosts, cancelSortPosts} = postsReducer.actions;

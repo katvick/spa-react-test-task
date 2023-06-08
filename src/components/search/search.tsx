@@ -12,12 +12,10 @@ function Search(): JSX.Element {
   }
 
   return (
-    <InputGroup className="mb-3 mx-auto" style={{ width: '80%' }}>
+    <InputGroup className="mb-4">
       <Form.Control
         type="search"
         placeholder="Введите запрос"
-        aria-label="Recipient's username"
-        aria-describedby="basic-addon2"
         onChange={inputChangeHandle}
       >
       </Form.Control>

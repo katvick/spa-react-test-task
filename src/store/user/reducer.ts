@@ -11,8 +11,7 @@ const initialState: UserState = {
 export const userReducer = createSlice({
   name: NameSpace.User,
   initialState,
-  reducers: {
-  },
+  reducers: {},
   extraReducers(builder) {
     builder
       .addCase(fetchUsersAction.pending, (state) => {

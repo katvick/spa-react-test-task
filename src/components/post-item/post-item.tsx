@@ -18,7 +18,7 @@ function PostItem({userId, id, title, body}: PostItemProps): JSX.Element {
   const linkUserCard = generatePath(AppRoute.UserCard, {id: String(userId)})
 
   return (
-    <Card className='my-4 mx-auto' style={{ width: '80%' }}>
+    <Card className='my-4'>
       <Card.Body className="post mx-1 my-1">
         <Row className="mb-4">
           <Col className="post d-flex align-items-start">
